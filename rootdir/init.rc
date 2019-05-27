@@ -512,6 +512,11 @@ on boot
 
     class_start core
 
+    # NFC
+    setprop ro.nfc.port "I2C"
+    chmod 0660 /dev/pn544
+    chown nfc nfc /dev/pn544 
+
 on nonencrypted
     # A/B update verifier that marks a successful boot.
     exec - root -- /system/bin/update_verifier nonencrypted
